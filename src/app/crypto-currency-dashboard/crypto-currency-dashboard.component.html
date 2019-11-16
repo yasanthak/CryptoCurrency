@@ -1,1 +1,28 @@
-<h1>Currency Cards</h1>
+<div class="container">
+    <div class="row">
+        <div class="card-deck mb-3 text-center col-md-4" *ngFor="let currencyList of currencyLists; let i = index">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{currencyList.currency}}</h4>
+                </div>
+                <div class="card-body ">
+                    <h1 class="card-title pricing-card-title">
+                        <small class="text-muted">{{getDate(currencyList.date)}}</small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4" *ngFor="let quote of currencyList.quotes">
+                        <li>
+                            <strong>Buy</strong> : {{quote.buyingPrice | currency:"USD":"symbol":"1.2-2"}}
+                            <strong>Time</strong> : {{ getTime(quote.buyingTime) }} </li>
+                        <li>
+                            <strong>Sell</strong> : {{quote.sellingPrice | currency:"USD":"symbol":"1.2-2"}}
+                            <strong>Time</strong> : {{ getTime(quote.sellingTime) }}</li>
+                        <li>
+                            <strong>Profit: {{quote.Profit | currency:"USD":"symbol":"1.2-2"}}</strong>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
