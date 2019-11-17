@@ -59,15 +59,15 @@ export class CryptoCurrencyService {
                 resObj.sellingTime = results.quotes[i].time;
                 resObj.buyingTime = time;
 
-               
+
 
             }
-            
+
         }
 
         if (isFinite(res)) {
             resArray.quotes.push(resObj);
-            
+
             return resArray;
         } else {
             return 0;

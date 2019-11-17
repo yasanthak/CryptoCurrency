@@ -3,11 +3,11 @@
         <div class="card-deck mb-3 text-center col-md-4" *ngFor="let currencyList of currencyLists; let i = index">
             <div class="card mb-4 shadow-sm">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">{{currencyList.currency}}</h4>
+                    <h4 class="my-0 font-weight-normal">{{getDate(currencyList.date)}}</h4>
                 </div>
                 <div class="card-body ">
                     <h1 class="card-title pricing-card-title">
-                        <small class="text-muted">{{getDate(currencyList.date)}}</small>
+                        <small class="text-muted">{{currencyList.currency}}</small>
                     </h1>
                     <ul class="list-unstyled mt-3 mb-4" *ngFor="let quote of currencyList.quotes">
                         <li>
