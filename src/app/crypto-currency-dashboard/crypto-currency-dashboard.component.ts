@@ -22,8 +22,7 @@ import * as moment from 'moment';
     
         this.cryptoCurrencyService.getCryptoCurrencyResults().subscribe(
             response => {
-                console.log(JSON.stringify(response))
-            this.currencyLists = response;
+                 this.currencyLists = response;
            
             },(err: any) => console.log(err)
           )
